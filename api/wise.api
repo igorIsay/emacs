@@ -1,0 +1,30 @@
+:api-url := wise-api-url
+:token := pp-writer-wise-token
+:profile := pp-wirter-wise-profile-id
+
+#
+#  Profiles
+#
+GET :api-url/profiles
+Authorization: Bearer :token
+
+#
+#  Add account
+#
+POST :api-url/accounts
+Authorization: Bearer :token
+Content-Type: application/json
+
+{"profile": :profile,"accountHolderName":"Test User","currency":"UAH","type":"privatbank","details":{"legalType":"PRIVATE","phoneNumber":"+380661111111","accountNumber":"2222","address":{"country":"UA","city":"Kiyv","postCode":"01001","firstLine":"Test address"}}}
+
+#
+#  Accounts list
+#
+GET :api-url/accounts
+Authorization: Bearer :token
+
+#
+# Delete Account
+#
+DELETE :api-url/accounts/253411461
+Authorization: Bearer :token

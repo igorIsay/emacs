@@ -1,0 +1,74 @@
+* Local configurations
+** Path
+#+begin_src emacs-lisp
+  (let ((projects-path ))
+    (setq pp-admin-ui-path (concat projects-path ))
+    (setq pp-admin-ui-docker-compose-file (concat projects-path ))
+    (setq pp-admin-api-docker-compose-file (concat projects-path ))
+
+    (setq pp-client-ui-path (concat projects-path ))
+    (setq pp-client-ui-docker-compose-file (concat projects-path ))
+    (setq pp-client-api-docker-compose-file (concat projects-path ))
+
+    (setq pp-writer-ui-path (concat projects-path ))
+    (setq pp-writer-ui-docker-compose-file (concat projects-path ))
+    (setq pp-writer-api-docker-compose-file (concat projects-path ))
+
+    (setq projects-path projects-path))
+#+end_src
+** DB connections
+#+begin_src emacs-lisp
+  (setq divorcer-local-db-port )
+  (setq divorcer-local-db-server )
+  (setq divorcer-local-db-user )
+  (setq divorcer-local-db-password )
+  (setq divorcer-local-db-database )
+
+  (setq pp-local-db-port )
+  (setq pp-local-db-server )
+  (setq pp-local-db-user )
+  (setq pp-local-db-password )
+  (setq pp-local-db-database )
+
+  (setq divorcer-stage-db-port )
+  (setq divorcer-stage-db-server )
+  (setq divorcer-stage-db-user )
+  (setq divorcer-stage-db-password )
+  (setq divorcer-stage-db-database )
+
+  (setq divorcer-prod-db-port )
+  (setq divorcer-prod-db-server )
+  (setq divorcer-prod-db-user )
+  (setq divorcer-prod-db-password )
+  (setq divorcer-prod-db-database )
+
+  (setq pp-prod-db-port )
+  (setq pp-prod-db-server )
+  (setq pp-prod-db-user )
+  (setq pp-prod-db-password )
+  (setq pp-prod-db-database )
+#+end_src
+** API
+*** ProPappers
+#+begin_src emacs-lisp
+  (setq pp-local-admin-api-url )
+  (setq pp-local-admin-api-email )
+  (setq pp-local-admin-api-password )
+
+  (setq pp-local-client-api-url )
+  (setq pp-local-client-api-email )
+  (setq pp-local-client-api-password )
+
+  (setq wise-api-url )
+  (setq pp-writer-wise-token )
+  (setq pp-wirter-wise-profile-id )
+#+end_src
+*** OnlineDivorcer
+#+begin_src emacs-lisp
+  (setq on-local-admin-api-url )
+  (setq on-local-admin-api-email )
+  (setq on-local-admin-api-password )
+
+  (setq on-local-client-api-url )
+#+end_src
+

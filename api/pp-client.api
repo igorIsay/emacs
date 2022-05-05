@@ -1,0 +1,34 @@
+:api-url := pp-local-client-api-url
+:email := pp-local-client-api-email
+:password := pp-local-client-api-password
+
+#
+# Order form data
+#
+GET :api-url/api-static/order-form-data
+
+#
+# Add client
+#
+POST :api-url/add-client
+Content-Type: application/json
+
+{"country_code":"UA","email":"user@gmail.com","password":"password","phone_no":"+380661111111","time_zone":"Europe/Kiev"}
+
+#
+# New order
+#
+POST :api-url/order/new-order
+Authorization: :token
+Content-Type: application/json
+
+{"Topic":"ads","PaperDetails":"asdf adsf asdf","NumberOfPages":1,"NumberOfSlides":0,"NumberOfProblems":0,"NumberOfQuestions":0,"NumberOfReference":"0","PreOrderFileId":[],"MinSources":"0","Spacing":1,"PaperFormat":1,"SubjectId":1,"TypeOfServiceId":1,"TypeOfPaperId":112,"DisciplineId":1,"DeadlineId":11,"AcademicLevelId":2,"SupposedWriterId":null,"WriterRankId":"1","PaymentType":5,"PlagService":false,"TopService":false,"AbstractPage":false,"IsInquiry":false,"PromoCode":""}
+
+#
+# Sign in
+#
+POST :api-url/sign-in
+Content-Type: application/json
+-> run-hook (restclient-set-var ":token" (concat "Bearer " (cdr (assq 'token (assq 'access_token (json-read))))))
+
+{"email":":email","password":":password"}

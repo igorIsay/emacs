@@ -1,0 +1,30 @@
+:api-url := on-local-admin-api-url
+:email := on-local-admin-api-email
+:password := on-local-admin-api-password
+
+#
+# Statistic traffic-stats
+#
+POST :api-url/statistics/get-all-for-traffic-stats-tab
+Authorization: :token
+Content-Type: application/json
+
+{"filters":{"top_filters":{"start_date":"2020-11-01","last_date":"2021-12-26"},"table_filters":{}}}
+
+#
+# Statistic traffic-stats-graph
+#
+POST :api-url/statistics/get-all-graph-data-for-traffic-stats-tab
+Authorization: :token
+Content-Type: application/json
+
+{"filters":{"top_filters":{"start_date":"2020-12-08","last_date":"2021-12-08","exclude_ukraine":false},"table_filters":{"subject_ids":[1]},"key_value":["total_sales"],"graph_period":"addWeek"}}
+
+#
+# Authentification
+#
+POST :api-url/login
+Content-Type: application/json
+-> run-hook (restclient-set-var ":token" (concat "Bearer " (cdr (assq 'token (assq 'success (json-read))))))
+
+{"email":":email","password":":password"}

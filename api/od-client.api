@@ -1,0 +1,11 @@
+:api-url := on-local-client-api-url
+
+#
+# AMP pageview
+#
+POST :api-url/amp-statistic-pageview?ampClientId=amp-test-1&referrer=https%3A%2F%2Fcheapdivorcearizona.com%2Farizona-quick-divorce%2F%3Famp&location=https%3A%2F%2Fcheapdivorcearizona.com%2Fprivacy-policy%2F%3Famp
+
+#
+# get statistic user uuid by amp client id
+#
+GET :api-url/statistic-uuid-by-amp-id?ampClientId=amp-OYJKiDkUlbpp-AEVPEjvpA
