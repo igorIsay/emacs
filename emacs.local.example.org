@@ -1,6 +1,8 @@
 * Local configurations
 ** Path
 #+begin_src emacs-lisp
+  (setq star-realms-fe-path )
+
   (let ((projects-path ))
     (setq pp-admin-ui-path (concat projects-path ))
     (setq pp-admin-ui-docker-compose-file (concat projects-path ))
@@ -49,7 +51,7 @@
   (setq pp-prod-db-database )
 #+end_src
 ** API
-*** ProPappers
+*** PP
 #+begin_src emacs-lisp
   (setq pp-local-admin-api-url )
   (setq pp-local-admin-api-email )
@@ -63,7 +65,7 @@
   (setq pp-writer-wise-token )
   (setq pp-wirter-wise-profile-id )
 #+end_src
-*** OnlineDivorcer
+*** ON
 #+begin_src emacs-lisp
   (setq on-local-admin-api-url )
   (setq on-local-admin-api-email )

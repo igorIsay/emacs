@@ -363,6 +363,12 @@
     (run-shell-with-command "docker-pp-writer-api" (format "docker-compose -f %s up" pp-writer-api-docker-compose-file))
     (run-shell-with-command "docker-pp-writer-ui" (format "docker-compose -f %s up" pp-writer-ui-docker-compose-file))
     (run-shell-with-command "npm-pp-writer" (format "cd %s; npm run dev-start" pp-writer-ui-path)))
+
+  (defun docker-star-realms ()
+    (interactive)
+    (run-shell-with-command "npm-star-realms" (format "cd %s; npm run watch" star-realms-fe-path))
+    (run-shell-with-command "docker-star-realms-be" "docker rm --force star-realms-be; docker run -p 8080:8080 --name star-realms-be docker-star-realms-be")
+    (run-shell-with-command "docker-star-realms-fe" "docker rm --force star-realms-fe; docker run -p 3000:3000 --name star-realms-fe docker-star-realms-fe"))
 #+end_src
 *** Laravel
 #+begin_src emacs-lisp
